@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace InpectionAppApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class FileController : ControllerBase
     {
