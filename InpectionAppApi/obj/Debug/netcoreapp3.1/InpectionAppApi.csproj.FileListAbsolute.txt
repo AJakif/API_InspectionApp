@@ -45,3 +45,9 @@ F:\Projects\InpectionAppApi\InpectionAppApi\obj\Debug\netcoreapp3.1\InpectionApp
 F:\Projects\InpectionAppApi\InpectionAppApi\obj\Debug\netcoreapp3.1\InpectionAppApi.dll
 F:\Projects\InpectionAppApi\InpectionAppApi\obj\Debug\netcoreapp3.1\InpectionAppApi.pdb
 F:\Projects\InpectionAppApi\InpectionAppApi\obj\Debug\netcoreapp3.1\InpectionAppApi.genruntimeconfig.cache
+F:\Projects\InpectionAppApi\InpectionAppApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+F:\Projects\InpectionAppApi\InpectionAppApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+F:\Projects\InpectionAppApi\InpectionAppApi\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+F:\Projects\InpectionAppApi\InpectionAppApi\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+F:\Projects\InpectionAppApi\InpectionAppApi\bin\Debug\netcoreapp3.1\InspectionAppApi.BusinessLayer.dll
+F:\Projects\InpectionAppApi\InpectionAppApi\bin\Debug\netcoreapp3.1\InspectionAppApi.BusinessLayer.pdb
