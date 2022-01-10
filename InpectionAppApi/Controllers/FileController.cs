@@ -24,14 +24,13 @@ namespace InpectionAppApi.Controllers
 
         [HttpPost]
         [Route("api/upload")]
-        public async Task<string> Upload([FromForm] FileUploadBO objFile)
+        public async Task<IActionResult> Upload([FromForm] FileUploadBO objFile)
         {
-
-            //var objFile = HttpContext.Request.Form.Files[0];
             try
             {
                 if (objFile.Files.Length > 0)
                 {
+                    string length = objFile.Files.Length.ToString();
                     string file = Path.GetFileNameWithoutExtension(objFile.Files.FileName);
                     string Filepath = _webHostEnv.WebRootPath + "\\" + file + "\\";
                     if (!Directory.Exists(Filepath))
@@ -47,12 +46,14 @@ namespace InpectionAppApi.Controllers
                     }
                     using (var stream = new FileStream(Zippath + objFile.Files.FileName, FileMode.Create))
                     {
+                        //Saving zip file
                         await objFile.Files.CopyToAsync(stream);
                     }
 
-                    //Delete Zip Folder
+                    //extract Zip file
                     ZipFile.ExtractToDirectory(Zippath + objFile.Files.FileName, Filepath);
-
+                    
+                    //Delete Zip Folder
                     DirectoryInfo di = new DirectoryInfo(Zippath);
 
                     foreach (FileInfo files in di.GetFiles())
@@ -64,17 +65,16 @@ namespace InpectionAppApi.Controllers
                         dir.Delete(true);
                     }
 
-                    return "Uploaded.";
+                    return Ok(new { Length = length, Name = file});
                 }
                 else
                 {
-                    return "Not Uploaded.";
+                    return BadRequest();
                 }
             }
             catch (Exception e)
             {
-                return e.Message;
-
+                return NotFound(e);
             }
         }
     }
